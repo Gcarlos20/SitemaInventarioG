@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    
+}
+
+body {
+    border: 2px solid black;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e5eff3;
+}
+
+.contenedor {
+    position: absolute;
+    border: 2px solid black;
+    width: 800px;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(247, 241, 223);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.contenedor-form {
+    border: 2px solid rgb(242, 134, 134);
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.contenedor-form h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.contenedor-form span {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.contenedor-input {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 8px;
+    padding: 0px 15px;
+    font-size: 17px;
+}
+
+.contenedor-input input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.btn {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(132, 228, 238);
+    border-radius: 50px;
+    color: rgb(174, 58, 58);
+    font-size: 17px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: rgb(112, 208, 218);
+}
+
+.contenedor-form a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.contenedor-form a:hover {
+    text-decoration: underline;
+}
+.contenedor-input2 {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 8px;
+    padding: 0px 15px;
+    font-size: 17px;
+}
+
+.contenedor-input2 input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        max-width: 400px;
+    }
+    
+    .contenedor-form {
+        width: 100%;
+        height: auto;
+        padding: 30px 20px;
+    }
+    
+    .contenedor-form h2 {
+        font-size: 20px;
+    }
+    
+    .contenedor-input,
+    .contenedor-input2 {
+        width: 100%;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
+
+
