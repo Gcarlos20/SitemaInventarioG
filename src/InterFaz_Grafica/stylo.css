@@ -1,0 +1,125 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #445cd2;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex: 1;
+    padding: 1rem;
+}
+
+.content {
+    flex: 1;
+    background-color: white;
+    padding: 1rem;
+    margin-right: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.inventory-panel {
+    width: 300px;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 1rem;
+    height: fit-content;
+}
+
+.inventory-panel h3, .inventory-panel h4 {
+    margin-bottom: 1rem;
+    color: #007bff;
+}
+
+.inventory-panel ul {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.inventory-panel li {
+    margin-bottom: 0.5rem;
+}
+
+.inventory-panel button {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.inventory-panel button:hover {
+    background-color: #0056b3;
+}
+
+.inventory-table {
+    margin-top: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th, td {
+    padding: 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f8f9fa;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+    
+    .content {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .inventory-panel {
+        width: 100%;
+        position: static;
+    }
+}
