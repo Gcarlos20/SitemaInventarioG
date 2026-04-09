@@ -67,12 +67,13 @@ main {
     width: 100%;
     padding: 0.5rem;
     margin-bottom: 0.5rem;
-    background-color: #007bff;
+    background-color: #5aa2f0;
+    font-size: 1rem;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.7s;
 }
 
 .inventory-panel button:hover {
