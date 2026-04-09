@@ -64,11 +64,12 @@ main {
 
 .inventory-panel button {
     display: block;
+    text-decoration: none;
     width: 100%;
     padding: 0.5rem;
     margin-bottom: 0.5rem;
     background-color: #69abf2;
-    font-size: 1rem;
+    font-size: 1rem; 
     color: white;
     border: none;
     border-radius: 5px;
@@ -135,6 +136,23 @@ footer {
     color: white;
 }
 
+.btn-regresar {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #69abf2;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    transition: background-color 0.7s;
+    cursor: pointer;
+}
+
+.btn-regresar:hover {
+    background-color: #0056b3;
+}
+
 details{
     margin-bottom: 10px;
     padding: 10px;
@@ -155,6 +173,11 @@ details summary {
     }
     .Panelayuda h1 {
         font-size: 1.5rem;
+    }
+    .btn-regresar {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1.2rem;
     }
     #section_ayuda {
         padding: 1rem;
