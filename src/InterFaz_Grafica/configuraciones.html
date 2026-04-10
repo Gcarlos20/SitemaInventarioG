@@ -7,5 +7,55 @@
 </head>
 <body>
     <h2>Configuraciones</h2>
+    <p>Aquí puedes ajustar las preferencias del sistema, gestionar usuarios y configurar alertas de stock.</p>
+    <a href="InterFace.html" style="text-decoration: none; color: inherit;" >
+        <button>Regresar</button>
+    </a>
+    <div class="container">
+
+    <h1>Configuración</h1>
+
+    <!-- Cuenta -->
+    <section>
+        <h2>Cuenta</h2>
+        
+        <label>Usuario</label>
+        <input type="text" value="Carlos">
+
+        <label>Correo</label>
+        <input type="email" value="correo@email.com">
+
+        <label>Contraseña</label>
+        <input type="password" placeholder="Nueva contraseña">
+        <button>Actualizar</button>
+    </section>
+
+    <!-- Apariencia -->
+    <section>
+        <h2>Apariencia</h2>
+
+        <label>Tema</label>
+        <select>
+            <option>Claro</option>
+            <option>Oscuro</option>
+        </select>
+    </section>
+
+    <!-- Notificaciones -->
+    <section>
+        <h2>Notificaciones</h2>
+
+        <label>
+            <input type="checkbox"> Activar notificaciones
+            <input type="checkbox"> Notificaciones por correo
+            <input type="checkbox"> Notificaciones a Whatsapp
+            <input type="checkbox"> Notificaciones Stock Bajo
+        </label>
+    </section>
+
+    <!-- Botón -->
+    <button class="btn-guardar">Guardar cambios</button>
+
+</div>
 </body>
 </html>
