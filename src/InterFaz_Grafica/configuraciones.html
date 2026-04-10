@@ -1,61 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Configuraciones</title>
+    <link rel="stylesheet" href="config.css">
 </head>
 <body>
-    <h2>Configuraciones</h2>
-    <p>Aquí puedes ajustar las preferencias del sistema, gestionar usuarios y configurar alertas de stock.</p>
-    <a href="InterFace.html" style="text-decoration: none; color: inherit;" >
-        <button>Regresar</button>
-    </a>
-    <div class="container">
+    <main class="config-shell">
+        <header class="config-header">
+            <div>
+                <p class="config-eyebrow">Configuraciones</p>
+                <h1>Diseño y preferencias</h1>
+                <p class="config-intro">Ajusta la cuenta, la apariencia y las alertas del inventario en un solo lugar.</p>
+            </div>
+            <a class="btn btn-secondary" href="InterFace.html">Regresar</a>
+        </header>
 
-    <h1>Configuración</h1>
+        <section class="config-grid">
+            <article class="card">
+                <h2>Cuenta</h2>
+                <p class="card-description">Actualiza tus datos de acceso y correo electrónico.</p>
+                <label>Usuario</label>
+                <input type="text" value="Carlos">
 
-    <!-- Cuenta -->
-    <section>
-        <h2>Cuenta</h2>
-        
-        <label>Usuario</label>
-        <input type="text" value="Carlos">
+                <label>Correo</label>
+                <input type="email" value="correo@email.com">
 
-        <label>Correo</label>
-        <input type="email" value="correo@email.com">
+                <label>Contraseña</label>
+                <input type="password" placeholder="Nueva contraseña">
 
-        <label>Contraseña</label>
-        <input type="password" placeholder="Nueva contraseña">
-        <button>Actualizar</button>
-    </section>
+                <button class="btn btn-primary">Actualizar cuenta</button>
+            </article>
 
-    <!-- Apariencia -->
-    <section>
-        <h2>Apariencia</h2>
+            <article class="card">
+                <h2>Editar usuario</h2>
+                <p class="card-description">Guarda los cambios de tu perfil personal y de seguridad.</p>
+                <form id="formUsuario">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" value="Carlos" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="correo">Correo</label>
+                        <input type="email" id="correo" value="correo@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" placeholder="Ej: 3001234567">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Nueva contraseña</label>
+                        <input type="password" id="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirmar contraseña</label>
+                        <input type="password" id="confirmPassword">
+                    </div>
+                    <div class="acciones">
+                        <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                        <button type="button" class="btn btn-secondary" onclick="cancelar()">Cancelar</button>
+                    </div>
+                    <p id="mensaje"></p>
+                </form>
+            </article>
 
-        <label>Tema</label>
-        <select>
-            <option>Claro</option>
-            <option>Oscuro</option>
-        </select>
-    </section>
+            <article class="card">
+                <h2>Apariencia</h2>
+                <p class="card-description">Elige el modo de visualización que prefieras.</p>
+                <label for="tema">Tema</label>
+                <select id="tema">
+                    <option>Claro</option>
+                    <option>Oscuro</option>
+                </select>
+            </article>
 
-    <!-- Notificaciones -->
-    <section>
-        <h2>Notificaciones</h2>
-
-        <label>
-            <input type="checkbox"> Activar notificaciones
-            <input type="checkbox"> Notificaciones por correo
-            <input type="checkbox"> Notificaciones a Whatsapp
-            <input type="checkbox"> Notificaciones Stock Bajo
-        </label>
-    </section>
-
-    <!-- Botón -->
-    <button class="btn-guardar">Guardar cambios</button>
-
-</div>
+            <article class="card">
+                <h2>Notificaciones</h2>
+                <p class="card-description">Configura alertas importantes del inventario.</p>
+                <label class="checkbox-label"><input type="checkbox"> Activar notificaciones</label>
+                <label class="checkbox-label"><input type="checkbox"> Notificaciones por correo</label>
+                <label class="checkbox-label"><input type="checkbox"> Notificaciones a WhatsApp</label>
+                <label class="checkbox-label"><input type="checkbox"> Alerta de stock bajo</label>
+                <button class="btn btn-primary">Guardar cambios</button>
+            </article>
+        </section>
+    </main>
 </body>
 </html>
