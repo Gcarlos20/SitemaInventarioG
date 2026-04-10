@@ -1,4 +1,9 @@
-/* Configuración de estilos para la página de configuraciones */
+/* ==================================================== */
+/* Shared page styles for configuraciones, usuarios, movimientos,
+   cantidad_total, productos, proveedores y reportes */
+/* ==================================================== */
+
+/* Global Reset and Body */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -12,12 +17,14 @@ body {
     min-height: 100vh;
 }
 
+/* Page Shell */
 .config-shell {
     max-width: 1100px;
     margin: 2rem auto;
     padding: 0 1rem 2rem;
 }
 
+/* Header / Hero */
 .config-header {
     display: flex;
     justify-content: space-between;
@@ -52,6 +59,7 @@ body {
     line-height: 1.7;
 }
 
+/* Buttons */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -79,12 +87,14 @@ body {
     color: #0f172a;
 }
 
+/* Grid layout for cards */
 .config-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem;
 }
 
+/* Card styles */
 .card {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 24px;
@@ -104,6 +114,7 @@ body {
     line-height: 1.7;
 }
 
+/* Form elements */
 label {
     display: block;
     margin-bottom: 0.55rem;
@@ -155,12 +166,87 @@ select:focus {
     margin: 0;
 }
 
+/* Table styles */
+.table-wrapper {
+    overflow-x: auto;
+    margin-top: 1rem;
+}
+
+.table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.table-wrapper th,
+.table-wrapper td {
+    padding: 0.95rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+.table-wrapper thead th {
+    background: #eef2ff;
+    color: #1e293b;
+    font-weight: 700;
+}
+
+/* Stats cards */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.stat-card {
+    background: #f8fafc;
+    border-radius: 18px;
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.4rem;
+}
+
+.stat-label {
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+/* Cantidad total card styles */
+.CantidadTotal {
+    background: #eef2ff;
+    border-radius: 18px;
+    padding: 1.5rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.CantidadTotal .Cantidad {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.CantidadTotal .Actualizacion {
+    color: #475569;
+}
+
+/* Message line */
 #mensaje {
     margin-top: 1rem;
     font-weight: 700;
     color: #2563eb;
 }
 
+/* Responsive */
 @media (max-width: 860px) {
     .config-grid {
         grid-template-columns: 1fr;

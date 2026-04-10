@@ -1,11 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Proveedores</title>
+    <link rel="stylesheet" href="config.css">
 </head>
 <body>
-    
+    <main class="config-shell">
+        <header class="config-header">
+            <div>
+                <p class="config-eyebrow">Inventario</p>
+                <h1>Proveedores</h1>
+                <p class="config-intro">Administra los proveedores del sistema y revisa la información de contacto.</p>
+            </div>
+            <a class="btn btn-secondary" href="InterFace.html">Regresar</a>
+        </header>
+
+        <section class="config-grid">
+            <article class="card">
+                <h2>Proveedores activos</h2>
+                <p class="card-description">Lista de proveedores registrados y sus datos principales.</p>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Proveedor</th>
+                                <th>Contacto</th>
+                                <th>Teléfono</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Proveedor A</td>
+                                <td>Pedro</td>
+                                <td>3101234567</td>
+                                <td>Activo</td>
+                            </tr>
+                            <tr>
+                                <td>Proveedor B</td>
+                                <td>María</td>
+                                <td>3207654321</td>
+                                <td>Activo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+
+            <article class="card">
+                <h2>Agregar proveedor</h2>
+                <p class="card-description">Registra un nuevo proveedor en tu sistema.</p>
+                <div class="form-group">
+                    <label for="proveedor-nombre">Nombre</label>
+                    <input id="proveedor-nombre" type="text" placeholder="Nombre del proveedor">
+                </div>
+                <div class="form-group">
+                    <label for="proveedor-contacto">Contacto</label>
+                    <input id="proveedor-contacto" type="text" placeholder="Nombre del contacto">
+                </div>
+                <div class="form-group">
+                    <label for="proveedor-telefono">Teléfono</label>
+                    <input id="proveedor-telefono" type="tel" placeholder="3101234567">
+                </div>
+                <button class="btn btn-primary">Guardar proveedor</button>
+            </article>
+
+            <article class="card">
+                <h2>Resumen de proveedores</h2>
+                <p class="card-description">Información rápida sobre el estado del proveedor.</p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <p class="stat-value">8</p>
+                        <p class="stat-label">Proveedores</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-value">2</p>
+                        <p class="stat-label">Inactivos</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-value">6</p>
+                        <p class="stat-label">Activos</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <h2>Acciones rápidas</h2>
+                <p class="card-description">Operaciones frecuentes para administrar proveedores.</p>
+                <button class="btn btn-primary">Editar proveedor</button>
+                <button class="btn btn-secondary">Enviar mensaje</button>
+            </article>
+        </section>
+    </main>
 </body>
 </html>

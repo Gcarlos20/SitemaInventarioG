@@ -4,95 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cantidad Total</title>
-    <link rel="stylesheet" href="Interfa.css">
+    <link rel="stylesheet" href="config.css">
 </head>
 <body>
-    <main class="page-shell">
-        <header class="PanelCantidadTotal">
-            <h1>Cantidad Total</h1>
-            <p class="PanelCantidadTotal__subtitle">Esta sección muestra la cantidad total de productos en el inventario.</p>
+    <main class="config-shell">
+        <header class="config-header">
+            <div>
+                <p class="config-eyebrow">Inventario</p>
+                <h1>Cantidad Total</h1>
+                <p class="config-intro">Consulta el total de productos, filtra por periodo y revisa un resumen rápido del inventario.</p>
+            </div>
+            <a class="btn btn-secondary" href="InterFace.html">Regresar</a>
         </header>
 
-        <div class="page-layout">
-            <aside class="inventory-panel">
-                <h3>Panel</h3>
-                <h4>Acciones rápidas</h4>
-                <button class="btn btn-actualizar">Actualizar</button>
-                <button class="btn btn-exportar">Exportar PDF</button>
-                <button class="btn btn-imprimir">Imprimir</button>
-                <a class="btn btn-regresar" href="InterFace.html">Regresar</a>
-            </aside>
-
-            <div class="page-content">
-                <section class="CantidadTotal card">
-                    <h2>Total de Productos</h2>
+        <section class="config-grid">
+            <article class="card">
+                <h2>Total de productos</h2>
+                <p class="card-description">Cantidad actual de artículos almacenados en el inventario.</p>
+                <div class="CantidadTotal">
                     <p class="Cantidad">100</p>
                     <span class="Actualizacion">Actualizado hoy</span>
-                </section>
+                </div>
+            </article>
 
-                <section class="FiltrosResumen">
-                    <article class="Filtros-card card">
-                        <div class="Filtros-header">
-                            <h2>Filtros</h2>
-                            <p>Selecciona el periodo para ver el inventario más reciente.</p>
-                        </div>
-                        <div class="Filtros-control">
-                            <label for="periodo">Filtrar por:</label>
-                            <select id="periodo" name="periodo">
-                                <option>Hoy</option>
-                                <option>Esta semana</option>
-                                <option>Este mes</option>
-                                <option>Este año</option>
-                            </select>
-                        </div>
-                    </article>
+            <article class="card">
+                <h2>Filtros</h2>
+                <p class="card-description">Elige el rango de tiempo para ver datos actualizados.</p>
+                <label for="periodo">Filtrar por</label>
+                <select id="periodo" name="periodo">
+                    <option>Hoy</option>
+                    <option>Esta semana</option>
+                    <option>Este mes</option>
+                    <option>Este año</option>
+                </select>
+                <button class="btn btn-primary">Aplicar filtro</button>
+            </article>
 
-                    <article class="Resumen-card card">
-                        <div class="Resumen-header">
-                            <h2>Resumen</h2>
-                            <p>Datos rápidos de entradas y salidas.</p>
-                        </div>
-                        <div class="Resumen-items">
-                            <div>
-                                <h3>Entradas</h3>
-                                <p>150</p>
-                            </div>
-                            <div>
-                                <h3>Salidas</h3>
-                                <p>-50</p>
-                            </div>
-                        </div>
-                    </article>
-                </section>
-
-                <section class="Tabla card">
-                    <div class="Tabla-header">
-                        <h2>Productos en inventario</h2>
-                        <p>Revisa el estado actual de las cantidades disponibles.</p>
+            <article class="card">
+                <h2>Resumen</h2>
+                <p class="card-description">Entradas y salidas del periodo seleccionado.</p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <p class="stat-value">150</p>
+                        <p class="stat-label">Entradas</p>
                     </div>
-                    <div class="Tabla-body">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Producto</th>
-                                    <th>Cantidad</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Producto 1</td>
-                                    <td>50</td>
-                                </tr>
-                                <tr>
-                                    <td>Producto 2</td>
-                                    <td>30</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="stat-card">
+                        <p class="stat-value">50</p>
+                        <p class="stat-label">Salidas</p>
                     </div>
-                </section>
-            </div>
-        </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <h2>Detalle de productos</h2>
+                <p class="card-description">Visualiza la cantidad por producto en el inventario.</p>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Producto 1</td>
+                                <td>50</td>
+                            </tr>
+                            <tr>
+                                <td>Producto 2</td>
+                                <td>30</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        </section>
     </main>
 </body>
 </html>

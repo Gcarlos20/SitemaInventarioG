@@ -1,11 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
+    <link rel="stylesheet" href="config.css">
 </head>
 <body>
-    <h2>Productos</h2>
+    <main class="config-shell">
+        <header class="config-header">
+            <div>
+                <p class="config-eyebrow">Inventario</p>
+                <h1>Productos</h1>
+                <p class="config-intro">Gestiona el catálogo de productos, revisa existencias y actualiza los datos de cada artículo.</p>
+            </div>
+            <a class="btn btn-secondary" href="InterFace.html">Regresar</a>
+        </header>
+
+        <section class="config-grid">
+            <article class="card">
+                <h2>Productos en el inventario</h2>
+                <p class="card-description">Revisa los productos registrados, su stock y precios.</p>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>Laptop</td>
+                                <td>10</td>
+                                <td>$1000</td>
+                            </tr>
+                            <tr>
+                                <td>002</td>
+                                <td>Mouse</td>
+                                <td>50</td>
+                                <td>$20</td>
+                            </tr>
+                            <tr>
+                                <td>003</td>
+                                <td>Teclado</td>
+                                <td>30</td>
+                                <td>$50</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+
+            <article class="card">
+                <h2>Agregar producto</h2>
+                <p class="card-description">Registra nuevos productos con sus datos básicos.</p>
+                <div class="form-group">
+                    <label for="producto-nombre">Nombre</label>
+                    <input id="producto-nombre" type="text" placeholder="Nombre del producto">
+                </div>
+                <div class="form-group">
+                    <label for="producto-cantidad">Cantidad</label>
+                    <input id="producto-cantidad" type="number" placeholder="0">
+                </div>
+                <div class="form-group">
+                    <label for="producto-precio">Precio</label>
+                    <input id="producto-precio" type="text" placeholder="$0.00">
+                </div>
+                <button class="btn btn-primary">Guardar producto</button>
+            </article>
+
+            <article class="card">
+                <h2>Resumen de stock</h2>
+                <p class="card-description">Visualiza rápidamente el inventario disponible.</p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <p class="stat-value">90</p>
+                        <p class="stat-label">Productos totales</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-value">12</p>
+                        <p class="stat-label">Bajo stock</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-value">15</p>
+                        <p class="stat-label">Productos nuevos</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <h2>Acciones rápidas</h2>
+                <p class="card-description">Operaciones habituales para mantener tu inventario actualizado.</p>
+                <button class="btn btn-primary">Editar producto</button>
+                <button class="btn btn-secondary">Eliminar producto</button>
+            </article>
+        </section>
+    </main>
 </body>
 </html>

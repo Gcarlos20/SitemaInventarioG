@@ -1,11 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ultimos movimientos</title>
+    <title>Últimos Movimientos</title>
+    <link rel="stylesheet" href="config.css">
 </head>
 <body>
-    <h2>Ultimos movimientos</h2>
+    <main class="config-shell">
+        <header class="config-header">
+            <div>
+                <p class="config-eyebrow">Inventario</p>
+                <h1>Últimos movimientos</h1>
+                <p class="config-intro">Revisa las entradas y salidas recientes del inventario en un formato claro y ordenado.</p>
+            </div>
+            <a class="btn btn-secondary" href="InterFace.html">Regresar</a>
+        </header>
+
+        <section class="config-grid">
+            <article class="card">
+                <h2>Movimientos recientes</h2>
+                <p class="card-description">Lista de los últimos movimientos registrados en el sistema.</p>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Producto</th>
+                                <th>Tipo</th>
+                                <th>Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>09/04/2026</td>
+                                <td>Producto 1</td>
+                                <td>Entrada</td>
+                                <td>+20</td>
+                            </tr>
+                            <tr>
+                                <td>08/04/2026</td>
+                                <td>Producto 2</td>
+                                <td>Salida</td>
+                                <td>-10</td>
+                            </tr>
+                            <tr>
+                                <td>07/04/2026</td>
+                                <td>Producto 3</td>
+                                <td>Entrada</td>
+                                <td>+15</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+
+            <article class="card">
+                <h2>Filtrar movimiento</h2>
+                <p class="card-description">Selecciona el periodo que deseas consultar.</p>
+                <label for="periodo-movimientos">Periodo</label>
+                <select id="periodo-movimientos">
+                    <option>Hoy</option>
+                    <option>Esta semana</option>
+                    <option>Este mes</option>
+                    <option>Este año</option>
+                </select>
+                <button class="btn btn-primary">Aplicar filtro</button>
+            </article>
+
+            <article class="card">
+                <h2>Resumen de actividades</h2>
+                <p class="card-description">Resumen rápido de entradas y salidas recientes.</p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <p class="stat-value">35</p>
+                        <p class="stat-label">Entradas</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-value">18</p>
+                        <p class="stat-label">Salidas</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-value">17</p>
+                        <p class="stat-label">Movimientos netos</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <h2>Acciones rápidas</h2>
+                <p class="card-description">Operaciones frecuentes para gestionar movimientos.</p>
+                <button class="btn btn-primary">Agregar movimiento</button>
+                <button class="btn btn-secondary">Ver historial completo</button>
+            </article>
+        </section>
+    </main>
 </body>
 </html>

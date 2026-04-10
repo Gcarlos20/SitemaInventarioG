@@ -1,11 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Reportes</title>
+    <link rel="stylesheet" href="config.css">
 </head>
 <body>
-    
+    <main class="config-shell">
+        <header class="config-header">
+            <div>
+                <p class="config-eyebrow">Inventario</p>
+                <h1>Reportes</h1>
+                <p class="config-intro">Genera y revisa reportes sobre productos, movimientos y desempeño de inventario.</p>
+            </div>
+            <a class="btn btn-secondary" href="InterFace.html">Regresar</a>
+        </header>
+
+        <section class="config-grid">
+            <article class="card">
+                <h2>Reportes disponibles</h2>
+                <p class="card-description">Accede a los reportes más utilizados del sistema.</p>
+                <button class="btn btn-primary">Reporte de productos</button>
+                <button class="btn btn-primary">Reporte de movimientos</button>
+                <button class="btn btn-primary">Reporte de proveedores</button>
+            </article>
+
+            <article class="card">
+                <h2>Filtrar reporte</h2>
+                <p class="card-description">Define el rango de fechas y el tipo de reporte que necesitas.</p>
+                <div class="form-group">
+                    <label for="reporte-tipo">Tipo de reporte</label>
+                    <select id="reporte-tipo">
+                        <option>Productos</option>
+                        <option>Movimientos</option>
+                        <option>Proveedores</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="reporte-periodo">Periodo</label>
+                    <select id="reporte-periodo">
+                        <option>Hoy</option>
+                        <option>Esta semana</option>
+                        <option>Este mes</option>
+                        <option>Este año</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary">Generar reporte</button>
+            </article>
+
+            <article class="card">
+                <h2>Resumen de reportes</h2>
+                <p class="card-description">Indicadores clave de la información generada.</p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <p class="stat-value">12</p>
+                        <p class="stat-label">Reportes generados</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-value">4</p>
+                        <p class="stat-label">Reportes recientes</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-value">8</p>
+                        <p class="stat-label">Reportes guardados</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <h2>Acciones rápidas</h2>
+                <p class="card-description">Toma decisiones con las funciones más usadas.</p>
+                <button class="btn btn-secondary">Descargar PDF</button>
+                <button class="btn btn-secondary">Enviar por correo</button>
+            </article>
+        </section>
+    </main>
 </body>
 </html>

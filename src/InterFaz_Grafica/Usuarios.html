@@ -1,12 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuarios</title>
+    <link rel="stylesheet" href="config.css">
 </head>
 <body>
-    <h2>Usuarios</h2>
-     
+    <main class="config-shell">
+        <header class="config-header">
+            <div>
+                <p class="config-eyebrow">Usuarios</p>
+                <h1>Gestión de Usuarios</h1>
+                <p class="config-intro">Administra los perfiles de acceso, los niveles de usuario y los permisos dentro del sistema.</p>
+            </div>
+            <a class="btn btn-secondary" href="InterFace.html">Regresar</a>
+        </header>
+
+        <section class="config-grid">
+            <article class="card">
+                <h2>Usuarios activos</h2>
+                <p class="card-description">Consulta la lista de usuarios registrados y su estado actual.</p>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Correo</th>
+                                <th>Rol</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Carlos</td>
+                                <td>carlos@email.com</td>
+                                <td>Administrador</td>
+                                <td>Activo</td>
+                            </tr>
+                            <tr>
+                                <td>María</td>
+                                <td>maria@email.com</td>
+                                <td>Consultor</td>
+                                <td>Activo</td>
+                            </tr>
+                            <tr>
+                                <td>Jorge</td>
+                                <td>jorge@email.com</td>
+                                <td>Encargado de Inventario</td>
+                                <td>Inactivo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+
+            <article class="card">
+                <h2>Agregar usuario</h2>
+                <p class="card-description">Crea un nuevo usuario con permisos personalizados.</p>
+                <div class="form-group">
+                    <label for="nombreUsuario">Nombre</label>
+                    <input id="nombreUsuario" type="text" placeholder="Nombre completo">
+                </div>
+                <div class="form-group">
+                    <label for="emailUsuario">Correo</label>
+                    <input id="emailUsuario" type="email" placeholder="correo@dominio.com">
+                </div>
+                <div class="form-group">
+                    <label for="rolUsuario">Rol</label>
+                    <select id="rolUsuario">
+                        <option>Administrador</option>
+                        <option>Supervisor</option>
+                        <option>Vendedor</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="estadoUsuario">Estado</label>
+                    <select id="estadoUsuario">
+                        <option>Activo</option>
+                        <option>Inactivo</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary">Crear usuario</button>
+            </article>
+
+            <article class="card">
+                <h2>Permisos</h2>
+                <p class="card-description">Asigna permisos rápidos para funciones clave.</p>
+                <label class="checkbox-label"><input type="checkbox"> Administrar productos</label>
+                <label class="checkbox-label"><input type="checkbox"> Generar reportes</label>
+                <label class="checkbox-label"><input type="checkbox"> Ver movimiento de inventario</label>
+                <label class="checkbox-label"><input type="checkbox"> Configurar alertas</label>
+                <button class="btn btn-primary">Guardar permisos</button>
+            </article>
+
+            <article class="card">
+                <h2>Resumen</h2>
+                <p class="card-description">Estado general de usuarios y controles de acceso.</p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <p class="stat-value">12</p>
+                        <p class="stat-label">Usuarios totales</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-value">3</p>
+                        <p class="stat-label">Inactivos</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-value">4</p>
+                        <p class="stat-label">Administradores</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
 </body>
 </html>

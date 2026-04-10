@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Producto</title>
+    <link rel="stylesheet" href="config.css">
+</head>
+<body>
+    <main class="config-shell">
+        <header class="config-header">
+            <div>
+                <p class="config-eyebrow">Inventario</p>
+                <h1>Agregar producto</h1>
+                <p class="config-intro">Registra un nuevo producto en el inventario con su información básica y detalles de precio.</p>
+            </div>
+            <a class="btn btn-secondary" href="Productos.html">Regresar</a>
+        </header>
+
+        <section class="config-grid">
+            <article class="card">
+                <h2>Nuevo producto</h2>
+                <p class="card-description">Completa el formulario para añadir un producto al catálogo.</p>
+                <div class="form-group">
+                    <label for="producto-nombre">Nombre</label>
+                    <input id="producto-nombre" type="text" placeholder="Nombre del producto">
+                </div>
+                <div class="form-group">
+                    <label for="producto-categoria">Categoría</label>
+                    <input id="producto-categoria" type="text" placeholder="Categoría">
+                </div>
+                <div class="form-group">
+                    <label for="producto-cantidad">Cantidad</label>
+                    <input id="producto-cantidad" type="number" placeholder="0">
+                </div>
+                <div class="form-group">
+                    <label for="producto-precio">Precio</label>
+                    <input id="producto-precio" type="text" placeholder="$0.00">
+                </div>
+                <button class="btn btn-primary">Guardar producto</button>
+            </article>
+
+            <article class="card">
+                <h2>Detalles adicionales</h2>
+                <p class="card-description">Opciones de visibilidad y estado del producto.</p>
+                <div class="form-group">
+                    <label for="producto-estado">Estado</label>
+                    <select id="producto-estado">
+                        <option>Activo</option>
+                        <option>Inactivo</option>
+                    </select>
+                </div>
+                <label class="checkbox-label"><input type="checkbox"> Visible en tienda</label>
+                <label class="checkbox-label"><input type="checkbox"> Requiere aprobación</label>
+                <button class="btn btn-primary">Actualizar opciones</button>
+            </article>
+
+            <article class="card">
+                <h2>Resumen rápido</h2>
+                <p class="card-description">Verifica datos clave antes de guardar el producto.</p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <p class="stat-value">0</p>
+                        <p class="stat-label">Vendidos</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-value">0</p>
+                        <p class="stat-label">Stock mínimo</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-value">0</p>
+                        <p class="stat-label">Alertas</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <h2>Acciones rápidas</h2>
+                <p class="card-description">Herramientas rápidas para administrar productos.</p>
+                <button class="btn btn-secondary">Cancelar</button>
+                <button class="btn btn-primary">Guardar y continuar</button>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
