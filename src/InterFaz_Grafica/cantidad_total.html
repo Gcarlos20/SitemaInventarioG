@@ -4,8 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cantidad Total</title>
+    <link rel="stylesheet" href="Interfa.css">
 </head>
 <body>
-    <h2>Cantidad Total</h2>
+    <header class="PanelCantidadTotal">
+        <h1>Cantidad Total</h1>
+        <span> esta sección muestra la cantidad total de productos en el inventario</span>
+    </header>
+    
+   
+    <div class="CantidadTotal">
+        <h2>Total de Productos</h2>
+        <p class="Cantidad"> 100</p>
+        <span class="Actualizacion">Actualizado Hoy</span>
+    </div>
+    
+    <div class="FiltrosResumen">
+        <div class="Filtros">
+            <div class="Filtros-card">
+                <div class="Filtros-header">
+                    <h2>Filtros</h2>
+                    <p>Selecciona el periodo para ver el inventario más reciente.</p>
+                </div>
+                <div class="Filtros-control">
+                    <label for="periodo">Filtrar por:</label>
+                    <select id="periodo" name="periodo">
+                        <option>Hoy</option>
+                        <option>Esta Semana</option>
+                        <option>Este Mes</option>
+                        <option>Este Año</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="resumen">
+            <div class="Resumen-card">
+                <div class="Resumen-header">
+                    <h2>Resumen</h2>
+                    <p>Datos rápidos de entradas y salidas.</p>
+                </div>
+                <div class="Resumen-items">
+                    <div>
+                        <h3>Entradas</h3>
+                        <p>150</p>
+                    </div>
+                    <div>
+                        <h3>Salidas</h3>
+                        <p>-50</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="Tabla">
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Producto 1</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>Producto 2</td>
+                    <td>30</td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn-actualizar">Actualizar</button>
+        <button class="btn-exportar">Exportar PDF</button>
+        <button class="btn-imprimir">Imprimir</button>
+        <button class="btn-regresar">Regresar</button>
+    </div>
+    
 </body>
 </html>
