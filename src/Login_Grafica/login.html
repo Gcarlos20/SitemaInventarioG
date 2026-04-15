@@ -40,7 +40,7 @@
                         <select id="registerRole" required>
                             <option value="">Selecciona un rol</option>
                             <option value="Administrador">Administrador</option>
-                            <option value="Supervisor">Supervisor</option>
+                            <option value="Supervisor">Consultor</option>
                             <option value="Vendedor">Vendedor</option>
                         </select>
                     </div>
@@ -49,13 +49,13 @@
             </div>
         </div>
     </div>
-    <script>
-        const API_URL = "http://localhost:3000";
+    <script> // URL base del backend
+        const API_URL = "http://localhost:3000"; // Cambia este puerto el backend corre en otro puerto
 
-        const loginForm = document.querySelector('.sign-in');
-        const registerForm = document.querySelector('.sign-up');
+        const loginForm = document.querySelector('.sign-in'); // Seleccionamos el formulario de inicio de sesión
+        const registerForm = document.querySelector('.sign-up'); // Seleccionamos el formulario de registro
 
-        const showMessage = (message, success = false) => {
+        const showMessage = (message, success = false) => { // Función para mostrar mensajes de éxito o error al usuario
             let messageBox = document.getElementById('authMessage');
             if (!messageBox) {
                 messageBox = document.createElement('div');
@@ -67,7 +67,7 @@
             messageBox.style.color = success ? '#166534' : '#b91c1c';
         };
 
-        loginForm.addEventListener('submit', async (event) => {
+        loginForm.addEventListener('submit', async (event) => { // Manejador de evento para el formulario de inicio de sesión
             event.preventDefault();
             const email = document.querySelector('.sign-in input[type="email"]').value.trim();
             const password = document.querySelector('.sign-in input[type="password"]').value.trim();

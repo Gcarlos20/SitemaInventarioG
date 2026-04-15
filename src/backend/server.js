@@ -1,12 +1,12 @@
-const express = require("express");
-const cors = require("cors");
+const express = require("express"); // Importar Express para crear el servidor
+const cors = require("cors"); // Importar CORS para permitir solicitudes desde el frontend, es necesario para que el frontend pueda comunicarse con el backend sin problemas de seguridad relacionados con el mismo origen
 
-const app = express();
+const app = express(); // Crear una instancia de Express
 
-app.use(cors());
-app.use(express.json());
+app.use(cors()); // Habilitar CORS para todas las rutas, esto permite que el frontend pueda hacer solicitudes al backend sin restricciones de origen
+app.use(express.json());  // Middleware para parsear el cuerpo de las solicitudes como JSON, esto es necesario para poder acceder a los datos enviados desde el frontend en formato JSON
 
-const roles = ["Administrador", "Consultor", "Vendedor"];  
+const roles = ["Administrador", "Consultor", "Vendedor"];  // Roles predefinidos para los usuarios
 
 let usuarios = [ // el let es para poder modificar el array al eliminar o editar usuarios
     {
@@ -35,29 +35,29 @@ let usuarios = [ // el let es para poder modificar el array al eliminar o editar
     }
 ];
 
-let productos = [];
+let productos = []; // Array para almacenar los productos, también con let para poder modificarlo al eliminar o editar productos
 
 // RUTAS DE USUARIOS y ROLES
-app.get("/roles", (req, res) => {
+app.get("/roles", (req, res) => { // Ruta para obtener los roles disponibles
     res.json(roles);
 });
 
-app.get("/usuarios", (req, res) => {
+app.get("/usuarios", (req, res) => { // Ruta para obtener la lista de usuarios, se omite la contraseña en la respuesta
     res.json(usuarios.map(({ password, ...rest }) => rest));
 });
 
-app.post("/register", (req, res) => {
+app.post("/register", (req, res) => { // Ruta para registrar un nuevo usuario, se validan los datos y se verifica que el correo no esté registrado
     const { nombre, email, password, role } = req.body;
     if (!nombre || !email || !password || !role) {
         return res.status(400).json({ mensaje: "Faltan datos obligatorios." });
     }
 
-    const existe = usuarios.some(u => u.email === email);
+    const existe = usuarios.some(u => u.email === email); // Verificar si el correo ya está registrado
     if (existe) {
         return res.status(409).json({ mensaje: "El correo ya está registrado." });
     }
 
-    const usuario = {
+    const usuario = { // Crear un nuevo usuario con un ID único basado en la fecha actual
         id: Date.now(),
         nombre,
         email,
@@ -91,7 +91,7 @@ app.put("/usuarios/:id", (req, res) => {
     const id = parseInt(req.params.id);
     const index = usuarios.findIndex(u => u.id === id);
 
-    if (index === -1) {
+    if (index === -1) { // Verificar si el usuario existe antes de intentar actualizarlo
         return res.status(404).json({ mensaje: "Usuario no encontrado." });
     }
 
