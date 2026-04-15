@@ -1,50 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LoginPage</title>
+    <title>Iniciar Sesión</title>
     <link rel="stylesheet" href="styleLogin.css">
 </head>
 <body>
-    <div class="contenedor">
-            <form class="sing-in">
-                <h2>Iniciar Sesión</h2>
-                <span>Utilice sus credenciales</span>  <!-- de aqui pa abajo es la seccion del contenedor de entrada-->
-                <div class="contenedor-input">
-                   
-                    <input type="email" placeholder="Nombre de usuario">
-                </div>
-                <div class="contenedor-input">
-                    <input type="email" placeholder="Correo electrónico">
-                </div>
-                <div class="contenedor-input2">
-                    
-                    <input type="password" placeholder="Contraseña">
-                </div>
-                <button class="btn">Iniciar Sesión</button>
-                <a href="#">¿Olvidaste tu contraseña?</a>
-            </form>
-        </div>
-        <div class="contenedor-form"> <!-- aqui se encuentra el formulario de registro-->
-            <form class="sing-up">
-                <h2>Registrarse</h2>
-                <span>Utilice su Correo</span>  <!-- de aqui pa abajo es la seccion del contenedor de entrada-->
-               
-                <div class="contenedor-input">
-                    
-                    <input type="email" placeholder="Correo electrónico">
-                </div>
-                <div class="contenedor-input2">
-                    
-                    <input type="password" placeholder="Contraseña">
-                    
-                </div>
-               
-                 <button class="btn">Registrarse</button>
-            </form>
+    <div class="page-shell">
+        <div class="contenedor">
+            <div class="auth-panel">
+                <form class="sign-in">
+                    <h2>Iniciar Sesión</h2>
+                    <span>Ingresa con tu nombre de usuario y contraseña.</span>
+                    <div class="contenedor-input">
+                        <input type="email" placeholder="Correo electrónico" required>
+                    </div>
+                    <div class="contenedor-input">
+                        <input type="password" placeholder="Contraseña" required>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Iniciar Sesión</button>
+                    <a class="link-secondary" href="#">¿Olvidaste tu contraseña?</a>
+                </form>
+            </div>
+            <div class="auth-panel auth-panel--side">
+                <form class="sign-up">
+                    <h2>Registrarse</h2>
+                    <span>¿Nuevo? Crea una cuenta para gestionar el inventario.</span>
+                    <div class="contenedor-input">
+                        <input id="registerName" type="text" placeholder="Nombre completo" required>
+                    </div>
+                    <div class="contenedor-input">
+                        <input id="registerEmail" type="email" placeholder="Correo electrónico" required>
+                    </div>
+                    <div class="contenedor-input">
+                        <input id="registerPassword" type="password" placeholder="Contraseña" required>
+                    </div>
+                    <div class="contenedor-input">
+                        <select id="registerRole" required>
+                            <option value="">Selecciona un rol</option>
+                            <option value="Administrador">Administrador</option>
+                            <option value="Supervisor">Supervisor</option>
+                            <option value="Vendedor">Vendedor</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-secondary" type="submit">Registrarse</button>
+                </form>
+            </div>
         </div>
     </div>
-</body>
+    <script>
+        const API_URL = "http://localhost:3000";
 
+        const loginForm = document.querySelector('.sign-in');
+        const registerForm = document.querySelector('.sign-up');
+
+        const showMessage = (message, success = false) => {
+            let messageBox = document.getElementById('authMessage');
+            if (!messageBox) {
+                messageBox = document.createElement('div');
+                messageBox.id = 'authMessage';
+                messageBox.className = 'auth-message';
+                document.querySelector('.page-shell').prepend(messageBox);
+            }
+            messageBox.textContent = message;
+            messageBox.style.color = success ? '#166534' : '#b91c1c';
+        };
+
+        loginForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const email = document.querySelector('.sign-in input[type="email"]').value.trim();
+            const password = document.querySelector('.sign-in input[type="password"]').value.trim();
+
+            try {
+                const response = await fetch(`${API_URL}/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const data = await response.json();
+                if (!response.ok) {
+                    return showMessage(data.mensaje || 'Error al iniciar sesión.');
+                }
+
+                localStorage.setItem('inventarioUser', JSON.stringify(data));
+                showMessage(`Bienvenido ${data.nombre} (${data.role})`, true);
+                setTimeout(() => {
+                    window.location.href = '../InterFaz_Grafica/InterFace.html';
+                }, 1000);
+            } catch (error) {
+                showMessage('No se pudo conectar con el servidor.');
+            }
+        });
+
+        registerForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const nombre = document.getElementById('registerName').value.trim();
+            const email = document.getElementById('registerEmail').value.trim();
+            const password = document.getElementById('registerPassword').value.trim();
+            const role = document.getElementById('registerRole').value;
+
+            try {
+                const response = await fetch(`${API_URL}/register`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ nombre, email, password, role })
+                });
+
+                const data = await response.json();
+                if (!response.ok) {
+                    return showMessage(data.mensaje || 'Error al registrar usuario.');
+                }
+
+                showMessage(`Usuario registrado como ${data.role}. Ahora puedes iniciar sesión.`, true);
+                registerForm.reset();
+            } catch (error) {
+                showMessage('No se pudo conectar con el servidor.');
+            }
+        });
+    </script>
+</body>
 </html>
