@@ -14,10 +14,10 @@
                     <h2>Iniciar Sesión</h2>
                     <span>Ingresa con tu nombre de usuario y contraseña.</span>
                     <div class="contenedor-input">
-                        <input type="email" placeholder="Correo electrónico" required>
+                        <input id="loginEmail" type="email" placeholder="Correo electrónico" required>
                     </div>
                     <div class="contenedor-input">
-                        <input type="password" placeholder="Contraseña" required>
+                        <input id="loginPassword" type="password" placeholder="Contraseña" required>
                     </div>
                     <button class="btn btn-primary" type="submit">Iniciar Sesión</button>
                     <a class="link-secondary" href="#">¿Olvidaste tu contraseña?</a>
@@ -40,7 +40,7 @@
                         <select id="registerRole" required>
                             <option value="">Selecciona un rol</option>
                             <option value="Administrador">Administrador</option>
-                            <option value="Supervisor">Consultor</option>
+                            <option value="Consultor">Consultor</option>
                             <option value="Vendedor">Vendedor</option>
                         </select>
                     </div>
@@ -49,13 +49,13 @@
             </div>
         </div>
     </div>
-    <script> // URL base del backend
-        const API_URL = "http://localhost:3000"; // Cambia este puerto el backend corre en otro puerto
+    <script>
+        const API_URL = "http://localhost:3000";
 
-        const loginForm = document.querySelector('.sign-in'); // Seleccionamos el formulario de inicio de sesión
-        const registerForm = document.querySelector('.sign-up'); // Seleccionamos el formulario de registro
+        const loginForm = document.querySelector('.sign-in');
+        const registerForm = document.querySelector('.sign-up');
 
-        const showMessage = (message, success = false) => { // Función para mostrar mensajes de éxito o error al usuario
+        const showMessage = (message, success = false) => {
             let messageBox = document.getElementById('authMessage');
             if (!messageBox) {
                 messageBox = document.createElement('div');
@@ -67,10 +67,10 @@
             messageBox.style.color = success ? '#166534' : '#b91c1c';
         };
 
-        loginForm.addEventListener('submit', async (event) => { // Manejador de evento para el formulario de inicio de sesión
+        loginForm.addEventListener('submit', async (event) => {
             event.preventDefault();
-            const email = document.querySelector('.sign-in input[type="email"]').value.trim();
-            const password = document.querySelector('.sign-in input[type="password"]').value.trim();
+            const email = document.getElementById('loginEmail').value.trim();
+            const password = document.getElementById('loginPassword').value.trim();
 
             try {
                 const response = await fetch(`${API_URL}/login`, {
